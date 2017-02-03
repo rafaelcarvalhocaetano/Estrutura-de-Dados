@@ -12,12 +12,6 @@ public class Vetor {
 		this.elementos = new String[capacidade];
 		this.tamanho = 0;
 	}
-
-	/*
-	 * public void adiciona(String elementos){ for(int i=0;
-	 * i<this.elementos.length;i++){ if(this.elementos[i] == null){
-	 * this.elementos[i] = elementos; break; } } }
-	 */
 	public void adiciona(String elementos) throws Exception {
 
 		if (this.tamanho < this.elementos.length) {
@@ -33,6 +27,14 @@ public class Vetor {
 			throw new IllegalArgumentException("Posição não encontrada ...");
 		}
 		return this.elementos[posicao];
+	}
+	public int busca(Object elemento){
+		for(int i=0; i<this.tamanho; i++){
+			if(this.elementos[i].equals(elemento)){
+				return i;
+			}
+		}
+		return -1;
 	}
 
 	public int tamanho() {
